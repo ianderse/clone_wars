@@ -13,8 +13,8 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/' do
-  	"test"
-  	#erb :index
+  	#{}"test"
+  	erb :index
   end
 
 end
