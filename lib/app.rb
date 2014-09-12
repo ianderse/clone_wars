@@ -17,4 +17,37 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :index
   end
 
+  get '/cart' do
+  	"test"
+  end
+
+  get '/myaccount' do
+  	"test"
+  end
+
+  get '/products/:product_id' do
+  	"test"
+  end
+
+  get '/shop' do
+  	"test"
+  end
+
+  get '/wholesale' do
+  	"test"
+  end
+
+  get '/news-events' do
+  	"test"
+  end
+
+  get '/about' do
+  	"test"
+  end
+
+  get "/contact-locations" do
+  	"test"
+  end
+
+
 end
