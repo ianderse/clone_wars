@@ -13,7 +13,6 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/' do
-  	#{}"test"
   	erb :index
   end
 
@@ -45,7 +44,19 @@ class NovoCoffeeApp < Sinatra::Base
   	"test"
   end
 
-  get "/contact-locations" do
+  get '/contact-locations' do
+  	"test"
+  end
+
+  get '/retail-cuppings' do
+  	"test"
+  end
+
+  get '/subscriptions' do
+  	"test"
+  end
+
+  get '/espresso-novo' do
   	"test"
   end
 
