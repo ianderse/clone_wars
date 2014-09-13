@@ -80,18 +80,18 @@ table td { font-family: "TradeGothicBold", Helvetica-Neue, Helvetica, sans-serif
 
 /* ------- Slider --------- */
 .panel-0{
-	background: #fff url('/wp-content/themes/mercor/images/hero_bg1.jpg') no-repeat center;
+	background: #fff url('/images/hero_bg1.jpg') no-repeat center;
 }
 .panel-1{
-	background: #fff url('/wp-content/themes/mercor/images/hero_bg_cherries.jpg') no-repeat center;
+	background: #fff url('/images/hero_bg_cherries.jpg') no-repeat center;
 }
 
 .panel-2{
-	background: #fff url('/wp-content/themes/mercor/images/hero_bg_honeybed.jpg') no-repeat center;
+	background: #fff url('/images/hero_bg_honeybed.jpg') no-repeat center;
 }
 
 .panel-3{
-	background: #fff url('/wp-content/themes/mercor/images/hero_bg_parchment.jpg') no-repeat center;
+	background: #fff url('/images/hero_bg_parchment.jpg') no-repeat center;
 }
 
 .textSlide .box{
@@ -419,7 +419,7 @@ a.monthly_subscription_orange{
 a.monthly_subscription_orange:after{
 	margin: -2px 0 0 20px;
 	position: absolute;
-	content: url('/wp-content/themes/mercor/images/big_arrow.png');
+	content: url('/images/big_arrow.png');
 }
 
 a.allied_products_blue{
@@ -436,7 +436,7 @@ a.allied_products_blue{
 a.allied_products_blue:after{
 	margin: -2px 0 0 20px;
 	position: absolute;
-	content: url('/wp-content/themes/mercor/images/big_arrow.png');
+	content: url('/big_arrow.png');
 }
 
 .blue:after{
@@ -676,7 +676,7 @@ a.monthly_subscription{
 a.monthly_subscription:after{
 	margin: -12px 0 0 30px;
 	position: absolute;
-	content: url('/wp-content/themes/mercor/images/big_arrow.png');
+	content: url('/images/big_arrow.png');
 }
 
 
