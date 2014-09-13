@@ -17,11 +17,11 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/cart' do
-  	"test"
+  	"test" #this may or may not be its own page
   end
 
   get '/myaccount' do
-  	"test"
+  	erb :myaccount
   end
 
   get '/products/:product_id' do
@@ -29,23 +29,23 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/shop' do
-  	"test"
+  	erb :shop
   end
 
   get '/wholesale' do
-  	"test"
+  	erb :wholesale
   end
 
   get '/news-events' do
-  	"test"
+  	erb :news_events
   end
 
   get '/about' do
-  	"test"
+  	erb :about
   end
 
   get '/contact-locations' do
-  	"test"
+  	erb :contact_locations
   end
 
   get '/retail-cuppings' do
@@ -55,10 +55,5 @@ class NovoCoffeeApp < Sinatra::Base
   get '/subscriptions' do
   	"test"
   end
-
-  get '/espresso-novo' do
-  	"test"
-  end
-
 
 end
