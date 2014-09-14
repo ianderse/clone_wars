@@ -33,7 +33,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/wholesale' do
-  	erb :wholesale
+    erb :wholesale
   end
 
   get '/news-events' do
