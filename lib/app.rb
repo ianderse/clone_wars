@@ -20,7 +20,7 @@ class NovoCoffeeApp < Sinatra::Base
   	"test" #this may or may not be its own page
   end
 
-  get '/myaccount' do
+  get '/my-account' do
   	erb :myaccount
   end
 
