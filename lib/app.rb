@@ -40,6 +40,10 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :news_events
   end
 
+  get '/news-events/2' do
+  	erb :news_events_page_two
+  end
+
   get '/about' do
   	erb :about
   end
