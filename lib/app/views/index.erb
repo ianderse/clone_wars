@@ -6,8 +6,9 @@
 
 <body class="home page page-id-4825 page-template page-template-template-home-php" data-feedly-mini="yes">
 
-<%= erb :header_partial %>
-
+<header>
+	<%= erb :header_partial %>
+</header>
 <script type="text/javascript">
 jQuery(document).ready(function($){
 if ($.browser.msie && $.browser.version.substr(0,1)<9) {
@@ -183,7 +184,6 @@ if ($.browser.msie && $.browser.version.substr(0,1)<9) {
 });
 
 </script>
-
 
 <div id="slider-wrapper">
 <div class=""></div>
@@ -534,4 +534,6 @@ if ($.browser.msie && $.browser.version.substr(0,1)<9) {
 	</div>
 </div>
 
-<%= erb :footer_partial %>
+<footer>
+	<%= erb :footer_partial %>
+</footer>
