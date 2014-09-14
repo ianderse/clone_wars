@@ -62,6 +62,12 @@
   </head>
   <body>
   	<div id="container">
+      <header>
+        <%= erb :header_partial %>
+      </header>
 	    <%= yield %>
+      <footer>
+        <%= erb :footer_partial %>
+      </footer>
   </body>
 </html>
