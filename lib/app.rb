@@ -24,6 +24,10 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :myaccount
   end
 
+  post '/my-account' do
+  	'test'
+  end
+
   get '/products/:product_id' do
   	"test"
   end
