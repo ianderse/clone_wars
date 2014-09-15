@@ -311,12 +311,12 @@ ul.nav li.previous_gallery {
 ul.nav li.next_gallery {
 	width: 60px;
 	height: 60px;
-	background: url(images/slideshowArrows.png) no-repeat -60px 0;
+	background: url(/images/slideshowArrows.png) no-repeat -60px 0;
 }
 ul.nav li.previous_gallery {
 	width: 60px;
 	height: 60px;
-	background: url(images/slideshowArrows.png) no-repeat;
+	background: url(/images/slideshowArrows.png) no-repeat;
 }
 
 .big_img{

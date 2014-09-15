@@ -253,7 +253,7 @@ ul.nav li.previous {
 ul.nav li.next {
 	width: 60px;
 	height: 60px;
-	background: url(images/slideshowArrows.png) no-repeat -60px 0;
+	background: url(/images/slideshowArrows.png) no-repeat -60px 0;
 }
 ul.nav li.previous {
 	width: 60px;
