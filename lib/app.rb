@@ -53,7 +53,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/subscriptions' do
-  	"test"
+  	erb :subscriptions
   end
 
 end
