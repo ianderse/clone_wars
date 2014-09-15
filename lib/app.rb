@@ -52,10 +52,6 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :contact_locations
   end
 
-  get '/retail-cuppings' do
-  	"test"
-  end
-
   get '/subscriptions' do
   	"test"
   end
