@@ -20,10 +20,6 @@ class NovoCoffeeApp < Sinatra::Base
   	"test" #this may or may not be its own page
   end
 
-  get '/my-account' do
-  	erb :myaccount
-  end
-
   post '/my-account' do
   	erb :shop, locals: {username: params[username], password: params[password]}
   end
@@ -32,32 +28,15 @@ class NovoCoffeeApp < Sinatra::Base
   	"test"
   end
 
-  get '/shop' do
-  	erb :shop
-  end
-
-  get '/wholesale' do
-    erb :wholesale
-  end
-
-  get '/news-events' do
-  	erb :news_events
-  end
-
   get '/news-events/2' do
-  	erb :news_events_page_two
+    erb :news_events_page_two
   end
 
-  get '/about' do
-  	erb :about
+  get '/:slug' do |slug|
+    erb slug_to_template(slug)
   end
 
-  get '/contact-locations' do
-  	erb :contact_locations
+  def slug_to_template(slug)
+    slug.gsub("-", "_").to_sym
   end
-
-  get '/subscriptions' do
-  	erb :subscriptions
-  end
-
 end
