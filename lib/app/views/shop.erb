@@ -37,7 +37,7 @@
 
 
                     <div class="productR">
-                      <div class="one_third">												<a href="/product/deri-kochoha-espresso" title="Deri Kochoha Espresso">
+                      <div class="one_third">												<a href="/product/deri-kochoha-espresso/" title="Deri Kochoha Espresso">
                           <div class="recentimage" style="background: none;">
                             <div class="image" style="background: none;">
                               <div class=""></div>
@@ -700,15 +700,28 @@
         </div>
       </div> -->
               </div>
-
-
         <!-- <p></p> -->
-
-
-
-
-
-
     </div>
     </div>
   </div>
+<!--
+<% products.each do |product| %>
+ <div class="productR">
+  <div class="one_third"><a href="/products/<%=product.id%>" title="<%= product.name%>">
+    <div class="recentimage" style="background: none;">
+      <div class="image" style="background: none;">
+        <div class=""></div>
+        <img src="/images/<%= product.image %>" style="display: inline;">
+      </div>
+    </div></a>
+    <div class="recentdescription">
+      <h3><a href="/product/<%=product.id%>" title="<%= product.name %>"> <%= product.name %> </a></h3>
+      <h3 class="category"><span class="price"><span class="from">From: </span><span class="amount"><%= product.price %></span></span></h3>
+    </div>
+    <div class="recentCart">
+      <a href="/products/<%=product.id %>" rel="nofollow" data-product_id="7530" class="add_to_cart_button button product_type_variable">View Details</a>
+    </div>
+  </div>
+</div>
+<% end %>
+ -->
