@@ -25,7 +25,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   post '/my-account' do
-  	'test'
+  	erb :shop, locals: {username: params[username], password: params[password]}
   end
 
   get '/products/:product_id' do
