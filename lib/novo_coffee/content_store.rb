@@ -1,7 +1,7 @@
 require 'sequel'
 require 'sqlite3'
 
-class IdeaStore
+class ContentStore
 
 # def all
 #   ideas = []
@@ -21,17 +21,11 @@ def database
   return @database if @database
 
   @database = Sequel.sqlite('db/database.sqlite3')
-
-  @database.create_table :content do
-    primary_key :id
-    String      :page, :size => 32
-    String      :content
-  end
   @database
 end
 
 def find(id)
-  content = @database.from(:content)
+  content = database.from(:content)
   content.where(:id => id).to_a[0]
 end
 

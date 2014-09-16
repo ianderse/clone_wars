@@ -1,5 +1,6 @@
 require 'bundler'
 require_relative './novo_coffee.rb'
+require_relative './novo_coffee/content_store.rb'
 
 Bundler.require
 
@@ -33,7 +34,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/:slug' do |slug|
-    erb slug_to_template(slug)
+    erb slug_to_template(slug), locals: {content_store: ContentStore.new}
   end
 
   def slug_to_template(slug)
