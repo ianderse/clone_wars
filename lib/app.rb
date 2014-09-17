@@ -53,7 +53,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/:slug' do |slug|
-    erb slug_to_template(slug), locals: {content_store: ContentStore.new, contents: ContentStore.new.all}
+    erb slug_to_template(slug), locals: {email: " ", content_store: ContentStore.new, contents: ContentStore.new.all}
   end
 
   def slug_to_template(slug)
