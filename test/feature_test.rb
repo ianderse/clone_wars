@@ -42,10 +42,10 @@ class UserTest < FeatureTest
 
   def test_it_can_email_admin_through_contact_form
     visit '/contact-locations'
-    fill_in('input_1', :with => 'Glen')
-    fill_in('input_2', :with => 'glenegbert1@gmail.com')
-    fill_in('input_3', :with => 'Hello')
-    fill_in('input_4', :with => '303 898 8988')
+    fill_in('name', :with => 'Glen')
+    fill_in('email_address', :with => 'glenegbert1@gmail.com')
+    fill_in('message', :with => 'Hello')
+    fill_in('phone', :with => '303 898 8988')
     click_button('Send')
 
     assert page.has_css?('#message')
