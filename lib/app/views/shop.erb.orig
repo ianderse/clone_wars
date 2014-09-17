@@ -1,0 +1,52 @@
+
+
+
+  <div class="outerpagewrap">
+          <div class="pagewrap" style="background: #332822 url(/images/hero_slim_wholesale.jpg) no-repeat center center;">
+          <div class="pagecontent">
+        <div class="pagecontentContent">
+          <h1>
+                          Shop
+          </h1>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mainwrap" class="homewrap">
+    <div id="main" class="clearfix">
+
+        <div class="homeRacent">
+          <div class="wocategoryFull">
+
+            <a href="/subscriptions" class="monthly_subscription_orange">Sign Up for a Monthly Coffee Subscription</a>
+            <% products = content_store.all_products %>
+            <% products.each do |product| %>
+             <div class="productR">
+              <div class="one_third"><a href="/products/<%=product[:id]%>" title="<%= product[:name] %>">
+                <div class="recentimage" style="background: none;">
+                  <div class="image" style="background: none;">
+                    <div class=""></div>
+                    <img src="/images/<%= product[:image] %>" style="display: inline;">
+                  </div>
+                </div></a>
+                <div class="recentdescription">
+                  <h3><a href="/product/<%=product[:id]%>" title="<%= product[:name] %>"> <%= product[:name] %> </a></h3>
+                  <h3 class="category"><span class="price"><span class="from">From: </span><span class="amount">$<%= product[:price].split(',').first %></span></span></h3>
+                </div>
+                <div class="recentCart">
+                  <a href="/products/<%=product[:id] %>" rel="nofollow" data-product_id="7530" class="add_to_cart_button button product_type_variable">View Details</a>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+              </div>
+<<<<<<< HEAD
+=======
+        <!-- <p></p> -->
+>>>>>>> text_editor
+    </div>
+    </div>
+  </div>
