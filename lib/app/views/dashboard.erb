@@ -4,22 +4,24 @@
 </br>
 </br>
 </br>
-<h1>Pages</h1>
+<div style="margin:40px">
+<h1>Pages</h1><br/>
+
   <ul id="list">
   <% contents.each do |content| %>
       <li>
-        <span id="title">
-        <%= content[:page] %><br/></span>
-        <span id="content">
+        <h3>Page Title:</h3><span id="title">
+        <%= content[:page] %><br/></span><br/>
+        <h3>Content:</h3><span id="content">
         <%= content[:content] %><br/></span>
 
         <a href="/<%= content[:id] %>/edit">Edit</a>
-      </li>
+      </li><br/>
 
     <% end %>
 
   </ul>
-<h1>Products</h1>
+<h1>Products</h1><br/>
 <table id="product-table">
     <tr>
       <th>ID</th>
@@ -40,7 +42,7 @@
         </tr>
       <% end %>
   </table>
-
+</div>
 
 <%# -- <!-- <div id="about-1" class="dashboard_item"> About 1
 <form action='/about1/edit' method='POST'>
