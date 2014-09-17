@@ -15,7 +15,8 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/' do
-  	erb :index
+    content_store = ContentStore.new
+  	erb :index, locals: {contents: content_store.all, products: content_store.all_products}
   end
 
   get '/cart' do
@@ -68,13 +69,15 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   put '/:id/edit' do |id|
-  	ContentStore.new.update(id.to_i, params[:content])
-  	erb :dashboard, locals: {contents: ContentStore.new.all, products: ContentStore.new.all_products}
+    content_store = ContentStore.new
+  	content_store.update(id.to_i, params[:content])
+  	erb :dashboard, locals: {contents: content_store.all, products: content_store.all_products}
   end
 
    put '/product/:id/edit' do |id|
-  	ContentStore.new.update_product(id.to_i, params[:product])
-  	erb :dashboard, locals: {contents: ContentStore.new.all, products: ContentStore.new.all_products}
+    content_store = ContentStore.new
+  	content_store.update_product(id.to_i, params[:product])
+  	erb :dashboard, locals: {contents: content_store.all, products: content_store.all_products}
   end
 
 end
