@@ -30,6 +30,14 @@ class AdminTest < FeatureTest
     assert page.has_css?('.edit-item')
   end
 
+  def test_admin_can_turn_on_banner
+    visit '/my-account'
+    fill_in('username', :with => 'Admin')
+    fill_in('password', :with => 'pass')
+    click_button('Login')
+    within()
+  end
+
 end
 
 class UserTest < FeatureTest
