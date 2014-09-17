@@ -1,15 +1,13 @@
 require 'sequel'
 require 'sqlite3'
+require 'pry'
 
 class ContentStore
 
-# def all
-#   ideas = []
-#   raw_ideas.each_with_index do |data, i|
-#     ideas << Idea.new(data.merge("id" => i))
-#   end
-#   ideas
-# end
+def all
+  content = database.from(:content)
+  content.select.to_a
+end
 #
 # def raw_ideas
 #   database.transaction do |db|
@@ -35,6 +33,10 @@ end
 
 def page(id)
   find(id)[:page]
+end
+
+def update(id, content)
+  database.from(:content).where(id: id).update(content: content)
 end
 
 
