@@ -1,3 +1,10 @@
+.truncate {
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .contact-form {
 	font-weight: bold;
 	font-size: 20px;
