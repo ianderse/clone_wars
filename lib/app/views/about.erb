@@ -40,6 +40,10 @@
       </p><p></p>
       <h2>Join us for a coffee tasting</h2>
       <p></p><p>
+
+        <% if email == " "
+          then %>
+
       <div class="reservation-form" id = "reservation-form"> Reservation Form
       <form action='/confirmation' method='POST'>
 
@@ -58,6 +62,12 @@
             <input type='submit' value="Send"/>
           </form>
       </div>
+
+      <% else %>
+        <p id="message">Thanks for your interest! We'll be in touch about your coffee tasting soon.</p>
+    <% end %>
+
+
     </div>
   </div>
   <div class="color_swatch gallery">
