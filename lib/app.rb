@@ -1,5 +1,4 @@
 require 'bundler'
-require_relative './novo_coffee.rb'
 require_relative './novo_coffee/user.rb'
 require_relative './novo_coffee/content_store.rb'
 
