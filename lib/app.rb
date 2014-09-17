@@ -74,18 +74,16 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :dashboard, locals: {contents: content_store.all, products: content_store.all_products}
   end
 
-
    put '/product/:id/edit' do |id|
     content_store = ContentStore.new
   	content_store.update_product(id.to_i, params[:product])
   	erb :dashboard, locals: {contents: content_store.all, products: content_store.all_products}
   end
 
-  # this is where we stopped! keep working below
-
   post '/message' do
     Pony.mail(:to => 'glenegbert1@gmail.com', :from => params[:name], :subject => 'Feedback from ' + params[:name], :body => "#{params[:name]} #{params[:phone]} #{params[:message]}")
-    erb :contact_locations, locals: {email: sent, contents: ContentStore.new.all}
+    erb :contact_locations, locals: {email: "sent", contents: ContentStore.new.all}
+
   end
 
 end
