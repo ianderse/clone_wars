@@ -9,9 +9,29 @@
       <header>
         <%= erb :header_partial %>
       </header>
+      <% banner = contents[2] %>
+      <% if banner[:content][0] == "1" %>
+        <section id="banner">
+          <div class="transbox">
+            <h1><%= banner[:content][1..-1] %></h1>
+          </div>
+        </section>
+      <% end %>
 	    <%= yield %>
       <footer>
         <%= erb :footer_partial %>
       </footer>
   </body>
 </html>
+
+
+<!-- <div class="background">
+  <div class="transbox">
+    <p>This is some text that is placed in the transparent box.
+    This is some text that is placed in the transparent box.
+    This is some text that is placed in the transparent box.
+    This is some text that is placed in the transparent box.
+    This is some text that is placed in the transparent box.</p>
+  </div>
+</div>
+ -->

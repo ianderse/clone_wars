@@ -1,3 +1,23 @@
+#banner {
+		position:fixed;
+		top: 133px;
+		width: 100%;
+		padding-top: 25px;
+		padding-bottom: 25px;
+    background: gray;
+    border: 2px solid black;
+    text-align: center;
+    z-index: 550;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+div.transbox h1 {
+		opacity: 1.0;
+    font-weight: bold;
+    color: #000000;
+    font-size:100px;
+}
 
 h1 {
 	color:#332822;
