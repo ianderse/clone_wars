@@ -11,7 +11,7 @@ class NovoCoffeeApp < Sinatra::Base
   set :public_folder, 'public'
 
   not_found do
-    erb :error
+    erb :error, locals: {contents: ContentStore.new.all}
   end
 
   get '/' do
