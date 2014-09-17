@@ -5,6 +5,7 @@ gem 'rack'
 gem 'sequel'
 gem 'sqlite3'
 gem 'pry'
+gem 'pony'
 
 group :development do
 	gem 'shotgun'
