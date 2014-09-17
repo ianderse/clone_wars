@@ -20,7 +20,7 @@
 
   </ul>
 <h1>Products</h1>
-<table>
+<table id="product-table">
     <tr>
       <th>ID</th>
       <th>Name</th>
@@ -36,7 +36,7 @@
           <td><%= product[:size] %></td>
           <td><%= product[:image] %></td>
           <td><%= product[:price] %></td>
-          <td><a style="margin-right:5px" href="/product/<%= product[:id] %>/edit">Edit</a></td>
+          <td class="edit-button"><a style="margin-right:5px" href="/product/<%= product[:id] %>/edit">Edit</a></td>
         </tr>
       <% end %>
   </table>

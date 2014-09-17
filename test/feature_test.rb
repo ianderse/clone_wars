@@ -4,41 +4,38 @@ class AdminTest < FeatureTest
 
   def test_it_can_log_in
     visit '/my-account'
-    within(input) do
-      # ^ input isn't right, but we need something in its place
-      fill_in('username', :with => 'Admin')
-      fill_in('password', :with => 'pass')
-      click_button('Login')
-
-      assert page.has_css?('.edit-button')
-    end
+    fill_in('username', :with => 'Admin')
+    fill_in('password', :with => 'pass')
+    click_button('Login')
+    assert page.has_css?('#product-table')
   end
 
   def test_it_can_log_out
     visit '/my-account'
-    within(input) do
-      # ^ input isn't right, but we need something in its place
-      fill_in('username', :with => 'Admin')
-      fill_in('password', :with => 'pass')
-      click_button('Login')
-      click_button('Logout')
-
-    refute page.has_css?('.edit-button')
-    end
+    fill_in('username', :with => 'Admin')
+    fill_in('password', :with => 'pass')
+    click_button('Login')
+    visit '/my-account'
+    refute page.has_css?('#product-table')
   end
 
   def test_it_can_edit_products
-    # log in through my account?
-    # go to wholesale page?
-    # edit
-    # see edited product on page
+    visit '/my-account'
+    fill_in('username', :with => 'Admin')
+    fill_in('password', :with => 'pass')
+    click_button('Login')
+    within('#product-table') do
+      first('.edit-button').click_link('Edit')
+    end
+    assert page.has_css?('.edit-item')
   end
 end
 
 class UserTest < FeatureTest
 
   def test_it_cannot_edit_pages
-    visit '/wholesale'
-    refute page.has_css?('.edit-button')
+    visit '/my-account'
+    click_button('Login')
+    refute page.has_css?('#product-table')
   end
 end
