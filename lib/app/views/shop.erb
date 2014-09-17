@@ -33,7 +33,7 @@
                 </div></a>
                 <div class="recentdescription">
                   <h3><a href="/product/<%=product[:id]%>" title="<%= product[:name] %>"> <%= product[:name] %> </a></h3>
-                  <h3 class="category"><span class="price"><span class="from">From: </span><span class="amount"><%= product[:price].split(',').first %></span></span></h3>
+                  <h3 class="category"><span class="price"><span class="from">From: </span><span class="amount">$<%= product[:price].split(',').first %></span></span></h3>
                 </div>
                 <div class="recentCart">
                   <a href="/products/<%=product[:id] %>" rel="nofollow" data-product_id="7530" class="add_to_cart_button button product_type_variable">View Details</a>
