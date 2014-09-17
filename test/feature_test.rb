@@ -31,6 +31,7 @@ class AdminTest < FeatureTest
     # log in through my account?
     # go to wholesale page?
     # edit
+    # see edited product on page
   end
 end
 
