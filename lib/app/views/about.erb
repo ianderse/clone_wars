@@ -38,7 +38,25 @@
       <p></p><p>
         <%= content_store.content(2) %>
       </p><p></p>
-      <a href="/contact-locations/" class="blue_button medium">Contact Us</a>
+      <h2>Join us for a coffee tasting</h2>
+      <p></p><p>
+      <div class="reservation-form" id = "reservation-form"> Reservation Form
+      <form action='/confirmation' method='POST'>
+
+            Name:
+            <textarea name='name'></textarea><br/>
+            Date:
+            <textarea name='date'></textarea><br/>
+            Email:
+            <textarea name='email_address'></textarea><br/>
+            Phone Number:
+            <textarea name='phone'></textarea><br/>
+            <input type='submit' value="Send"/>
+          </form>
+
+      </div>
+
+      <!-- <a href="/contact-locations/" class="blue_button medium">Contact Us</a> -->
     </div>
   </div>
   <div class="color_swatch gallery">
