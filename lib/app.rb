@@ -85,7 +85,7 @@ class NovoCoffeeApp < Sinatra::Base
 
   post '/message' do
     Pony.mail(:to => 'glenegbert1@gmail.com', :from => params[:name], :subject => 'Feedback from ' + params[:name], :body => "#{params[:name]} #{params[:phone]} #{params[:message]}")
-    # erb :contact_locations, locals: {email: sent}
+    erb :contact_locations, locals: {email: sent, contents: ContentStore.new.all}
   end
 
 end
