@@ -45,7 +45,7 @@ class NovoCoffeeApp < Sinatra::Base
 
   get '/product/:id/edit' do |id|
   	product = ContentStore.new.find_product(id)
-    erb :edit_product, locals: {product: product}
+    erb :edit_product, locals: {product: product, contents: ContentStore.new.all}
   end
 
   get '/news-events/2' do
