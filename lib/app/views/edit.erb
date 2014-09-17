@@ -5,9 +5,9 @@
   </br>
   </br>
 <div class="edit-item"> Edit Your Item
-<form action='/content[:id]/edit' method='POST'>
+<form action='/<%= content[:id] %>/edit' method='POST'>
       <input type="hidden" name="_method" value="PUT" />
-      <textarea name='content'><%= content[:content] %> </textarea><br/>
+      <textarea name='content' style="width:100%"><%= content[:content] %> </textarea><br/>
       <input type='submit'/>
     </form>
 

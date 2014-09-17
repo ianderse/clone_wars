@@ -65,6 +65,14 @@ def update(id, content)
   database.from(:content).where(id: id).update(content: content)
 end
 
+def update_product(id, data)
+	product = database.from(:products).where(id: id)
+	product.update(size: data[:size])
+	product.update(name: data[:name])
+	product.update(image: data[:image])
+	product.update(price: data[:price])
+end
+
 
 # def delete(position)
 #   database.transaction do

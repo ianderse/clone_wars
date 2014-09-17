@@ -28,8 +28,9 @@ class NovoCoffeeApp < Sinatra::Base
 
   post '/my-account' do
     user = User.new
+    content_store = ContentStore.new
     if user.valid?(params[:username], params[:password])
-      erb :dashboard, locals: {contents: ContentStore.new.all}
+      erb :dashboard, locals: {contents: content_store.all, products: content_store.all_products}
       else
       erb :index
     end
@@ -39,6 +40,11 @@ class NovoCoffeeApp < Sinatra::Base
   	store = ContentStore.new
   	product = store.find_product(product_id.to_i)
   	erb :product_page, locals: {product: product}
+  end
+
+  get '/product/:id/edit' do |id|
+  	product = ContentStore.new.find_product(id)
+    erb :edit_product, locals: {product: product}
   end
 
   get '/news-events/2' do
@@ -54,11 +60,21 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/:id/edit' do |id|
-    content = ContentStore.new.find(id)
+    content = ContentStore.new.find_content(id)
     erb :edit, locals: {content: content}
     # content_store = ContentStore.new
     # content_store.update(1, params[:content])
     # redirect '/'
+  end
+
+  put '/:id/edit' do |id|
+  	ContentStore.new.update(id.to_i, params[:content])
+  	erb :dashboard, locals: {contents: ContentStore.new.all, products: ContentStore.new.all_products}
+  end
+
+   put '/product/:id/edit' do |id|
+  	ContentStore.new.update_product(id.to_i, params[:product])
+  	erb :dashboard, locals: {contents: ContentStore.new.all, products: ContentStore.new.all_products}
   end
 
 end

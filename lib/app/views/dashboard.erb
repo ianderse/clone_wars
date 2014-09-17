@@ -19,6 +19,27 @@
 
   </ul>
 
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Options</th>
+    </tr>
+        <% products.each do |product| %>
+        <tr>
+          <td><%= product[:id] %></td>
+          <td><%= product[:name] %></td>
+          <td><%= product[:size] %></td>
+          <td><%= product[:image] %></td>
+          <td><%= product[:price] %></td>
+          <td><a style="margin-right:5px" href="/product/<%= product[:id] %>/edit">Edit</a></td>
+        </tr>
+      <% end %>
+  </table>
+
 
 <%# -- <!-- <div id="about-1" class="dashboard_item"> About 1
 <form action='/about1/edit' method='POST'>
