@@ -1,6 +1,42 @@
+
+.truncate {
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .contact-form {
 	font-weight: bold;
+}
+
+#contact_form_title{
+display: block;
+font-weight: bold;
+color:black;
+font-size: 28px;
+text-align:center;
+margin-bottom: 15px;
+
+}
+
+.text_area{
+
+}
+
+#contact-form {
+	background-color: #D6C299;
 	font-size: 20px;
+	color:black;
+	width: 50%;
+	margin: auto;
+	margin-top: -80px;
+	border:solid #f15c2e; 10px;
+	border-radius: 20px;
+	padding-left: 30px;
+	padding-right: 80px;
+	padding-bottom: 30px;
+	padding-top: 20px;
 }
 
 #banner {

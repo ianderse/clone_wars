@@ -7,7 +7,10 @@
 </br>
 </br>
 </br>
-<div class="edit-item" style="margin:40px"> Edit Your Item
+<div class="edit-item" style="margin:40px"> <h1>Edit Your Item</h1><br/>
+<h3>Page:</h3>
+<%=content[:page]%><br/><br/>
+<h3>Content:</h3>
 <form action='/<%= content[:id] %>/edit' method='POST'>
       <input type="hidden" name="_method" value="PUT" />
       <textarea name='content' style="width:100%"><%= content[:content] %> </textarea><br/>
