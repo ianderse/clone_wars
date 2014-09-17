@@ -84,7 +84,8 @@ class NovoCoffeeApp < Sinatra::Base
   # this is where we stopped! keep working below
 
   post '/message' do
-    erb :contact_locations, locals: {email: sent}
+    Pony.mail(:to => 'glenegbert1@gmail.com', :from => params[:name], :subject => 'Feedback from ' + params[:name], :body => "#{params[:name]} #{params[:phone]} #{params[:message]}")
+    # erb :contact_locations, locals: {email: sent}
   end
 
 end
