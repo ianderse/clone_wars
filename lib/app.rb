@@ -25,8 +25,10 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :shop, locals: {username: params[username], password: params[password]}
   end
 
-  get '/products/:product_id' do
-  	erb :product_page
+  get '/products/:product_id' do |product_id|
+  	store = ContentStore.new
+  	product = store.find_product(product_id.to_i)
+  	erb :product_page, locals: {product: product}
   end
 
   get '/news-events/2' do
