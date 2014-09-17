@@ -25,60 +25,7 @@
 
 	<div class="images imagesSP">
 
-	<script type="text/javascript">
-	jQuery(document).ready(function($){
-			$('#slider').anythingSlider({
-			hashTags : false,
-			expand		: true,
-			autoPlay	: true,
-			resizeContents  : false,
-			pauseOnHover    : true,
-			buildArrows     : false,
-			buildNavigation : false,
-			delay		: 1800000,
-			resumeDelay	: 0,
-			animationTime	: 800,
-			delayBeforeAnimate:0,
-			easing : 'easeInOutQuint',
-			 onShowStart       : function(e, slider) {	$('.nextbutton').fadeIn();
-				$('.prevbutton').fadeIn();},
-			onSlideBegin    : function(e, slider) {
-					$('.nextbutton').fadeOut();
-					$('.prevbutton').fadeOut();
-
-			},
-			onSlideComplete    : function(slider) {
-				$('.nextbutton').fadeIn();
-				$('.prevbutton').fadeIn();
-
-			}
-			})
-
-
-			$('.blogsingleimage').hover(function() {
-			$(".slideforward").stop(true, true).fadeIn();
-			$(".slidebackward").stop(true, true).fadeIn();
-			}, function() {
-			$(".slideforward").fadeOut();
-			$(".slidebackward").fadeOut();
-			});
-			$(".pauseButton").toggle(function(){
-			$(this).attr("class", "playButton");
-			$('#slider').data('AnythingSlider').startStop(false); // stops the slideshow
-			},function(){
-			$(this).attr("class", "pauseButton");
-			$('#slider').data('AnythingSlider').startStop(true);  // start the slideshow
-			});
-			$(".slideforward").click(function(){
-			$('#slider').data('AnythingSlider').goForward();
-			});
-			$(".slidebackward").click(function(){
-			$('#slider').data('AnythingSlider').goBack();
-			});
-		});
-
-	</script>
-							<a href="/images/<%=product[:image]%>" title="Novo Decaf" rel="prettyPhoto"><img class="check" src="/images/<%=product[:image]%>" data-o_src="/images/<%=product[:image]%>" data-o_title="" data-o_alt="" alt="" title="" style="opacity: 1;"></a>
+		<a href="/images/<%=product[:image]%>" title="Novo Decaf" rel="prettyPhoto"><img class="check" src="/images/<%=product[:image]%>" data-o_src="/images/<%=product[:image]%>" data-o_title="" data-o_alt="" alt="" title="" style="opacity: 1;"></a>
 
 		</div>
 		<div class="thumbnails"></div>
@@ -90,18 +37,6 @@
 	<div class="titleSP">
 		<h2><%=product[:name]%></h2>
 	</div>
-	<!-- <div class="priceSP">
-
-
-	<link itemprop="availability" href="http://schema.org/" />
-
-	</div> -->
-	<script type="text/javascript">
-	if ( ! product_variations )
-		var product_variations = new Array();
-
-    product_variations[ 5965 ] = [{"variation_id":"5966","attributes":{"attribute_pa_size":"12oz"},"image_src":"","image_link":"","image_title":"","image_alt":"","price_html":"<span class=\"price\"><span class=\"amount\">&#36;14.50<\/span><\/span>","availability_html":"","sku":"1500X","weight":"1 lbs","dimensions":"3 x 2 x 6 in","min_qty":1,"max_qty":0,"backorders_allowed":false,"is_in_stock":true,"is_downloadable":false,"is_virtual":false,"is_sold_individually":"no"},{"variation_id":"6487","attributes":{"attribute_pa_size":"2lb"},"image_src":"","image_link":"","image_title":"","image_alt":"","price_html":"<span class=\"price\"><span class=\"amount\">&#36;37<\/span><\/span>","availability_html":"","sku":"2500X","weight":"3 lbs","dimensions":"5 x 3 x 8 in","min_qty":1,"max_qty":0,"backorders_allowed":false,"is_in_stock":true,"is_downloadable":false,"is_virtual":false,"is_sold_individually":"no"},{"variation_id":"5967","attributes":{"attribute_pa_size":"5lb"},"image_src":"","image_link":"","image_title":"","image_alt":"","price_html":"<span class=\"price\"><span class=\"amount\">&#36;78<\/span><\/span>","availability_html":"","sku":"3500X","weight":"6 lbs","dimensions":"7 x 5 x 1 in","min_qty":1,"max_qty":0,"backorders_allowed":false,"is_in_stock":true,"is_downloadable":false,"is_virtual":false,"is_sold_individually":"no"}];
-</script>
 
 
 <div class="cartPS">
@@ -137,85 +72,37 @@
 					</div>
 	</div>
 </div>
-
-
 	</div>
-
-
-
-	<!-- <div class="woocommerce-tabs">
-		<ul class="tabs">
-
-				<li class="_tab">
-					<a href="#tab-"></a>
-				</li>
-
-						<div class="social_tab" >
-				<div class="titleShareSP"></div>
-				<div class="socialSP"></div>
-			</div>
-		</ul>
-
-			<div class="panel entry-content" id="tab-">
-							</div>
-
-			</div> -->
-
-
-</div><!-- #product-5965 -->
-				<!-- <div class="homeRacent">
-					<div class="titleborder"></div>
-					<h2 class="section_title">Featured <span>Products</span></h2>
-					<div id="homeRecent" class="productRH">
-
-					<ul id="productR" class="productR">
-												<li><div class="one_third">								<a href="http://novocoffee.com/product/ojo-de-agua-2/" title="Ojo de Agua">
-									<div class="recentimage" style="background: none;">
-										<div class="image" style="background: none;">
-											<div class=""></div>
-											<img src="./Novo Decaf   Novo Coffee_files/timthumb(5).php" style="display: inline;">										</div>
-									</div>
-								</a>
-								<div class="recentdescription">
-																		<h3><a href="http://novocoffee.com/product/ojo-de-agua-2/" title="Ojo de Agua">Ojo de Agua</a></h3>
-									<h3 class="category"><span class="price"><span class="from">From: </span><span class="amount">$14</span></span></h3>
-								</div>
-								<div class="recentCart">
-
-	<a href="http://novocoffee.com/product/ojo-de-agua-2/" rel="nofollow" data-product_id="7434" class="add_to_cart_button button product_type_variable">View Details</a>
 </div>
-							</div>
-						<div class="one_third">								<a href="http://novocoffee.com/product/hartmann-honey/" title="Hartmann Honey">
-									<div class="recentimage" style="background: none;">
-										<div class="image" style="background: none;">
-											<div class=""></div>
-											<img src="./Novo Decaf   Novo Coffee_files/timthumb(6).php" style="display: inline;">										</div>
-									</div>
-								</a>
-								<div class="recentdescription">
-																		<h3><a href="http://novocoffee.com/product/hartmann-honey/" title="Hartmann Honey">Hartmann Honey</a></h3>
-									<h3 class="category"><span class="price"><span class="from">From: </span><span class="amount">$15</span></span></h3>
-								</div>
-								<div class="recentCart">
-
-	<a href="http://novocoffee.com/product/hartmann-honey/" rel="nofollow" data-product_id="6541" class="add_to_cart_button button product_type_variable">View Details</a>
-</div>
-							</div>
-						<div class="one_third last">								<a href="http://novocoffee.com/product/san-sebastian-2/" title="San Sebastian – Out Of Stock">
-									<div class="recentimage" style="background: none;">
-										<div class="image" style="background: none;">
-											<div class=""></div>
-											<img src="./Novo Decaf   Novo Coffee_files/timthumb(7).php" style="display: inline;">										</div>
-									</div>
-								</a>
-								<div class="recentdescription">
-																		<h3><a href="http://novocoffee.com/product/san-sebastian-2/" title="San Sebastian – Out Of Stock">San Sebastian – Out Of Stock</a></h3>
-									<h3 class="category"><span class="price"><span class="from">From: </span><span class="amount">$16</span></span></h3>
-								</div>
-								<div class="recentCart">
-
-	<a href="http://novocoffee.com/product/san-sebastian-2/" class="button">Read More</a> -->
-
+<div class="clear"></div>
+		<h2 class="section_title">Featured <span>Products</span></h2>
+		<a href="/shop" class="view_all">view all</a>
+		<div class="clear"></div>
+<div id="main" class="clearfix">
+        <div class="homeRacent">
+          <div class="wocategoryFull">
+            <% products[3..5].each do |product| %>
+             <div class="productR">
+              <div class="one_third"><a href="/products/<%=product[:id]%>" title="<%= product[:name] %>">
+                <div class="recentimage" style="background: none;">
+                  <div class="image" style="background: none;">
+                    <div class=""></div>
+                    <img src="/images/<%= product[:image] %>" style="display: inline;">
+                  </div>
+                </div></a>
+                <div class="recentdescription">
+                  <h3><a href="/products/<%=product[:id]%>" title="<%= product[:name] %>"> <%= product[:name] %> </a></h3>
+                  <h3 class="category"><span class="price"><span class="from">From: </span><span class="amount">$<%= product[:price].split(',').first %></span></span></h3>
+                </div>
+                <div class="recentCart">
+                  <a href="/products/<%=product[:id] %>" rel="nofollow" data-product_id="7530" class="add_to_cart_button button product_type_variable">View Details</a>
+                </div>
+              </div>
+            </div>
+          <% end %>
+              </div>
+    		</div>
+    </div>
 </div>
 							</div>
 												</li></ul>

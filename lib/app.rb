@@ -38,9 +38,9 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/products/:product_id' do |product_id|
-  	store = ContentStore.new
-  	product = store.find_product(product_id.to_i)
-  	erb :product_page, locals: {product: product}
+  	content_store = ContentStore.new
+  	product = content_store.find_product(product_id.to_i)
+  	erb :product_page, locals: {product: product, products: content_store.all_products}
   end
 
   get '/product/:id/edit' do |id|
