@@ -4,16 +4,17 @@
 </br>
   </br>
   </br>
-<div class="edit-item"> Edit Your Product
+<div class="edit-item" style="margin:40px">
+  <h1>Edit Your Product</h1>
 <form action='/product/<%= product[:id] %>/edit' method='POST'>
       <input type="hidden" name="_method" value="PUT" />
-      Sizes:
+      Sizes:<br/>
       <textarea name='product[size]'><%= product[:size] %> </textarea><br/>
-      Name:
+      Name:<br/>
       <textarea name='product[name]'><%= product[:name] %></textarea><br/>
-      Image:
+      Image:<br/>
       <textarea name='product[image]'><%= product[:image] %></textarea><br/>
-      Prices:
+      Prices:<br/>
       <textarea name='product[price]'><%= product[:price] %></textarea><br/>
       <input type='submit'/>
     </form>
