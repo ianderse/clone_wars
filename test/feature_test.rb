@@ -30,6 +30,26 @@ class AdminTest < FeatureTest
     assert page.has_css?('.edit-item')
   end
 
+  def test_admin_can_turn_banner_on_and_off
+    visit '/my-account'
+    fill_in('username', :with => 'Admin')
+    fill_in('password', :with => 'pass')
+    click_button('Login')
+    find(:xpath, "//a[@href='/3/edit']").click
+    fill_in('content', :with => "1 Hello, Test")
+    click_button('Submit')
+    assert page.has_css?('.transbox')
+
+    visit '/my-account'
+    fill_in('username', :with => 'Admin')
+    fill_in('password', :with => 'pass')
+    click_button('Login')
+    find(:xpath, "//a[@href='/3/edit']").click
+    fill_in('content', :with => "0 Hello, Test")
+    click_button('Submit')
+    refute page.has_css?('.transbox')
+  end
+
 end
 
 class UserTest < FeatureTest

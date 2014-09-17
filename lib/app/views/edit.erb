@@ -11,7 +11,7 @@
 <form action='/<%= content[:id] %>/edit' method='POST'>
       <input type="hidden" name="_method" value="PUT" />
       <textarea name='content' style="width:100%"><%= content[:content] %> </textarea><br/>
-      <input type='submit'/>
+      <input type='submit' class='button' name='submit' value="Submit"/>
     </form>
 
 </div>
