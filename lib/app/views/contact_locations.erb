@@ -86,17 +86,13 @@ Denver, CO 80218								</p>
   </br>
   <% if email == " "
     then %>
-<div class="contact-form" id = "contact-form"> Contact Form
+<div class="contact-form" id="contact-form">
+<span id="contact_form_title">    Contact Form </span>
 <form action='/message' method='POST'>
-
-      Name:
-      <textarea name='name'></textarea><br/>
-      Email:
-      <textarea name='email_address'></textarea><br/>
-      Message:
-      <textarea name='message'></textarea><br/>
-      Phone Number:
-      <textarea name='phone'></textarea><br/>
+      <textarea class="text_area" placeholder ="Name" name='name'></textarea><br/>
+      <textarea class="text_area" placeholder ="Email" name='email_address'></textarea><br/>
+      <textarea class="text_area" placeholder ="Message" name='message' rows="4" cols="50"></textarea><br/>
+      <textarea class="text_area" placeholder ="Phone Numbe" name='phone'></textarea><br/>
       <input type='submit' value="Send"/>
     </form>
 
