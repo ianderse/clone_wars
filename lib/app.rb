@@ -26,7 +26,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/products/:product_id' do
-  	"test"
+  	erb :product_page
   end
 
   get '/news-events/2' do

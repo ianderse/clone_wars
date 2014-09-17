@@ -24,17 +24,43 @@ def database
   @database
 end
 
-def find(id)
+def find_content(id)
   content = database.from(:content)
   content.where(:id => id).to_a[0]
 end
 
 def content(id)
-  find(id)[:content]
+  find_content(id)[:content]
 end
 
 def page(id)
-  find(id)[:page]
+  find_content(id)[:page]
+end
+
+def all_products
+	dataset = database.from(:products)
+	dataset.select.to_a
+end
+
+def find_product(id)
+	products = database.from(:products)
+	products.where(:id => id).to_a[0]
+end
+
+def size(id)
+	find_product(id)[:size].split(',')
+end
+
+def name(id)
+	find_product(id)[:name]
+end
+
+def image(id)
+	find_product(id)[:image]
+end
+
+def price(id)
+	find_product(id)[:price].split(',')
 end
 
 
