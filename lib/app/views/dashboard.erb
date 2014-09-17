@@ -10,13 +10,13 @@
   <ul id="list">
   <% contents.each do |content| %>
       <li>
-        <span id="title">
-        <%= content[:page] %><br/></span>
-        <span id="content">
+        <h3>Page Title:</h3><span id="title">
+        <%= content[:page] %><br/></span><br/>
+        <h3>Content:</h3><span id="content">
         <%= content[:content] %><br/></span>
 
         <a href="/<%= content[:id] %>/edit">Edit</a>
-      </li>
+      </li><br/>
 
     <% end %>
 
