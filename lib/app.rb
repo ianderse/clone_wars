@@ -24,7 +24,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/my-account' do
-    erb :my_account
+    erb :my_account, locals: {contents: ContentStore.new.all}
   end
 
   post '/my-account' do
@@ -40,7 +40,7 @@ class NovoCoffeeApp < Sinatra::Base
   get '/products/:product_id' do |product_id|
   	content_store = ContentStore.new
   	product = content_store.find_product(product_id.to_i)
-  	erb :product_page, locals: {product: product, products: content_store.all_products}
+  	erb :product_page, locals: {product: product, products: content_store.all_products, contents: content_store.all}
   end
 
   get '/product/:id/edit' do |id|
@@ -53,7 +53,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/:slug' do |slug|
-    erb slug_to_template(slug), locals: {content_store: ContentStore.new}
+    erb slug_to_template(slug), locals: {content_store: ContentStore.new, contents: ContentStore.new.all}
   end
 
   def slug_to_template(slug)
@@ -62,7 +62,7 @@ class NovoCoffeeApp < Sinatra::Base
 
   get '/:id/edit' do |id|
     content = ContentStore.new.find_content(id)
-    erb :edit, locals: {content: content}
+    erb :edit, locals: {content: content, contents: ContentStore.new.all}
     # content_store = ContentStore.new
     # content_store.update(1, params[:content])
     # redirect '/'
