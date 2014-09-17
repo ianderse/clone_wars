@@ -72,9 +72,15 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :dashboard, locals: {contents: ContentStore.new.all, products: ContentStore.new.all_products}
   end
 
-   put '/product/:id/edit' do |id|
+  put '/product/:id/edit' do |id|
   	ContentStore.new.update_product(id.to_i, params[:product])
   	erb :dashboard, locals: {contents: ContentStore.new.all, products: ContentStore.new.all_products}
+  end
+
+  # this is where we stopped! keep working below
+
+  post '/message' do
+    erb :contact_locations, locals: {email: sent}
   end
 
 end

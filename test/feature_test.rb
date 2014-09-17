@@ -29,6 +29,7 @@ class AdminTest < FeatureTest
     end
     assert page.has_css?('.edit-item')
   end
+
 end
 
 class UserTest < FeatureTest
@@ -37,5 +38,16 @@ class UserTest < FeatureTest
     visit '/my-account'
     click_button('Login')
     refute page.has_css?('#product-table')
+  end
+
+  def test_it_can_email_admin_through_contact_form
+    visit '/contact-locations'
+    fill_in('input_1', :with => 'Glen')
+    fill_in('input_2', :with => 'glenegbert1@gmail.com')
+    fill_in('input_3', :with => 'Hello')
+    fill_in('input_4', :with => '303 898 8988')
+    click_button('Send')
+
+    assert page.has_css?('#message')
   end
 end
