@@ -30,7 +30,7 @@ class AdminTest < FeatureTest
     assert page.has_css?('.edit-item')
   end
 
-  def test_admin_can_turn_on_banner
+  def test_admin_can_turn_banner_on_and_off
     visit '/my-account'
     fill_in('username', :with => 'Admin')
     fill_in('password', :with => 'pass')
@@ -39,9 +39,7 @@ class AdminTest < FeatureTest
     fill_in('content', :with => "1 Hello, Test")
     click_button('Submit')
     assert page.has_css?('.transbox')
-  end
 
-  def test_admin_can_turn_off_banner
     visit '/my-account'
     fill_in('username', :with => 'Admin')
     fill_in('password', :with => 'pass')
