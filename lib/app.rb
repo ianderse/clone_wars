@@ -85,8 +85,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   post '/confirmation' do
-    Pony.mail(:to => 'ssimon@wellesley.edu', :from => params[:name], :subject => 'Reservation from ' + params[:name], :body => "#{params[:date]} #{params[:time]} #{params[:party_size]}")
+    Pony.mail(:to => 'ssimon@wellesley.edu', :from => params[:name], :subject => 'Reservation from ' + params[:name], :body => "#{params[:name]} #{params[:date]} #{params[:time]} #{params[:party_size]} #{params[:email_address]} #{params[:phone]}")
     erb :about, locals: {email: "sent", content_store: ContentStore.new, contents: ContentStore.new.all}
   end
-
 end
