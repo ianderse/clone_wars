@@ -1,0 +1,18 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>Products</h1>
+<ul>
+<% @pdcts.each do |product| %>
+  <li>
+    <h2><a href="/product/<%= product.id %>"><%= product.name %></a></h2>
+    <p><%= product.size %></p>
+    <p><%= product.image %></p>
+    <p><%= product.price %></p>
+  </li>
+<% end %>
+</ul>
+<a href="/new">New Product</a>

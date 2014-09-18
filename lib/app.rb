@@ -1,4 +1,5 @@
 require 'bundler'
+require_relative '../db/database.rb'
 require_relative './novo_coffee/user.rb'
 require_relative './novo_coffee/content_store.rb'
 
@@ -52,14 +53,6 @@ class NovoCoffeeApp < Sinatra::Base
     erb :news_events_page_two, locals: {contents: ContentStore.new.all}
   end
 
-  get '/:slug' do |slug|
-    erb slug_to_template(slug), locals: {reviews: ContentStore.new.all_reviews, email: " ", content_store: ContentStore.new, contents: ContentStore.new.all}
-  end
-
-  def slug_to_template(slug)
-    slug.gsub("-", "_").to_sym
-  end
-
   get '/:id/edit' do |id|
     content = ContentStore.new.find_content(id)
     erb :edit, locals: {content: content, contents: ContentStore.new.all}
@@ -71,7 +64,7 @@ class NovoCoffeeApp < Sinatra::Base
   	erb :dashboard, locals: {contents: content_store.all, products: content_store.all_products}
   end
 
-   put '/product/:id/edit' do |id|
+  put '/product/:id/edit' do |id|
     content_store = ContentStore.new
   	content_store.update_product(id.to_i, params[:product])
   	erb :dashboard, locals: {contents: content_store.all, products: content_store.all_products}
@@ -90,6 +83,39 @@ class NovoCoffeeApp < Sinatra::Base
   post '/reviews' do
     ContentStore.new.create_review(params[:user_name], params[:review])
     redirect '/reviews'
+  end
+
+  get '/all' do
+    @pdcts = Product.order("created_at DESC")
+    #Product.inspect
+    redirect '/new' if @pdcts.empty?
+    erb :all, locals: {contents: ContentStore.new.all}
+  end
+
+  get '/new' do
+    erb :new, locals: {contents: ContentStore.new.all}
+  end
+
+  post '/new' do
+    @product = Product.new(params[:product])
+    if @product.save
+      redirect "/product/#{@product.id}"
+    else
+      erb :new, locals: {contents: ContentStore.new.all}
+    end
+  end
+
+  get '/product/:id' do
+    @product = Product.find_by_id(params[:id])
+    erb :product, locals: {contents: ContentStore.new.all}
+  end
+
+  get '/:slug' do |slug|
+    erb slug_to_template(slug), locals: {reviews: ContentStore.new.all_reviews, email: " ", content_store: ContentStore.new, contents: ContentStore.new.all}
+  end
+
+  def slug_to_template(slug)
+    slug.gsub("-", "_").to_sym
   end
 
 end
