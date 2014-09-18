@@ -70,4 +70,17 @@ class UserTest < FeatureTest
 
     assert page.has_css?('#message')
   end
+
+  def test_it_can_email_admin_through_reservation_form
+    visit '/about'
+    fill_in('name',          :with => 'Sara')
+    fill_in('date',          :with => 'September 18, 2014')
+    fill_in('time',          :with => 'Morning')
+    fill_in('party_size',    :with => '20')
+    fill_in('email_address', :with => 'ssimon@wellesley.edu')
+    fill_in('phone',         :with => '867-5309')
+    click_button('Send')
+
+    assert page.has_css?('#message')
+  end
 end
