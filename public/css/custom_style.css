@@ -25,10 +25,11 @@ margin-bottom: 15px;
 }
 
 #contact-form {
+
 	background-color: gainsboro;
 	font-size: 20px;
 	color:black;
-	width: 50%;
+	width: 75%;
 	margin: auto;
 	margin-top: -80px;
 	border:solid gray; 10px;
