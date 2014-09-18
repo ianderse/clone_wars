@@ -67,7 +67,6 @@ class UserTest < FeatureTest
     fill_in('message',       :with => 'Hello')
     fill_in('phone',         :with => '303 898 8988')
     click_button('Send')
-
     assert page.has_css?('#message')
   end
 
@@ -80,7 +79,6 @@ class UserTest < FeatureTest
     fill_in('email_address', :with => 'ssimon@wellesley.edu')
     fill_in('phone',         :with => '867-5309')
     click_button('Send')
-
     assert page.has_css?('#message')
   end
 end
