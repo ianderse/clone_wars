@@ -19,7 +19,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/cart' do
-  	"test" #this may or may not be its own page
+  	redirect '/'
   end
 
   get '/my-account' do
