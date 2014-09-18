@@ -39,34 +39,33 @@
         <%= content_store.content(2) %>
       </p><p></p>
       <h2>Join us for a coffee tasting</h2>
-      <p></p><p>
+
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
 
         <% if email == " "
           then %>
 
-      <div class="reservation-form" id = "reservation-form"> Reservation Form
+      <div class="reservation-form" id = "reservation-form">
+      <span id="reservation_form_title"> Reservation Form </span>
       <form action='/confirmation' method='POST'>
-
-            Name:
-            <textarea name='name'></textarea><br/>
-            Desired Date:
-            <textarea name='date'></textarea><br/>
-            Desired Time:
-            <textarea name='time'></textarea><br/>
-            Party Size:
-            <textarea name='party_size'></textarea><br/>
-            Email:
-            <textarea name='email_address'></textarea><br/>
-            Phone Number:
-            <textarea name='phone'></textarea><br/>
-            <input type='submit' value="Send"/>
+        <textarea class="text_area" placeholder ="Name" name='name'></textarea><br/>
+        <textarea class="text_area" placeholder ="Desired Date" name='date'></textarea><br/>
+        <textarea class="text_area" placeholder ="Desired Time" name='time'></textarea><br/>
+        <textarea class="text_area" placeholder ="Party Size" name='party_size'></textarea><br/>
+        <textarea class="text_area" placeholder ="Email Address" name='email_address'></textarea><br/>
+        <textarea class="text_area" placeholder ="Phone Number" name='phone'></textarea><br/>
+        <input type='submit' value="Send"/>
           </form>
       </div>
 
       <% else %>
         <p id="message">Thanks for your interest! We'll be in touch about your coffee tasting soon.</p>
     <% end %>
-
 
     </div>
   </div>

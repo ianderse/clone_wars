@@ -39,6 +39,36 @@ margin-bottom: 15px;
 	padding-top: 20px;
 }
 
+.reservation-form {
+  font-weight: bold;
+}
+
+#reservation_form_title{
+display: block;
+font-weight: bold;
+color:black;
+font-size: 28px;
+text-align:center;
+margin-bottom: 15px;
+
+}
+
+#reservation-form {
+  background-color: gainsboro;
+  font-size: 20px;
+  color:black;
+  width: 50%;
+  margin: auto;
+  margin-top: -80px;
+  border:solid gray; 10px;
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 80px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+
 #banner {
 		position:fixed;
 		top: 133px;
