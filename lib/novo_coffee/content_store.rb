@@ -66,4 +66,14 @@ class ContentStore
 		product.update(price: data[:price])
 	end
 
+	def create_review(user_name,review)
+		reviews = database.from(:reviews)
+		reviews.insert(:name => user_name, :review => review)
+	end
+
+	def all_reviews
+		dataset = database.from(:reviews)
+		dataset.select.to_a
+	end
+
 end

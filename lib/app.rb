@@ -3,6 +3,7 @@ require_relative './novo_coffee.rb'
 require_relative './novo_coffee/user.rb'
 require_relative './novo_coffee/content_store.rb'
 
+
 Bundler.require
 
 class NovoCoffeeApp < Sinatra::Base
@@ -53,7 +54,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/:slug' do |slug|
-    erb slug_to_template(slug), locals: {email: " ", content_store: ContentStore.new, contents: ContentStore.new.all}
+    erb slug_to_template(slug), locals: {reviews: ContentStore.new.all_reviews, email: " ", content_store: ContentStore.new, contents: ContentStore.new.all}
   end
 
   def slug_to_template(slug)
@@ -84,6 +85,11 @@ class NovoCoffeeApp < Sinatra::Base
     Pony.mail(:to => 'glenegbert1@gmail.com', :from => params[:name], :subject => 'Feedback from ' + params[:name], :body => "#{params[:name]} #{params[:phone]} #{params[:message]}")
     erb :contact_locations, locals: {email: "sent", contents: ContentStore.new.all}
 
+  end
+
+  post '/reviews' do
+    ContentStore.new.create_review(params[:user_name], params[:review])
+    redirect '/reviews'
   end
 
 end

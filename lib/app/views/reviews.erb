@@ -1,0 +1,30 @@
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div id="reviews_list">
+<span id="reviews-title"> Customer Reviews </span>
+<br/>
+<ul id="list">
+    <% reviews.each do |review| %>
+      <li>
+        <p id="review"> <%= review[:name] %> says "<%= review[:review]%>"<br/></p>
+      <br/>
+      <% end %>
+
+  </ul>
+</div>
+</br>
+</br>
+<div id="review-form">
+<span id="review_form_title"> Add a Review </span>
+      <form id="review_item" action='/reviews' method='POST'>
+      <br/>
+      <input type='text' placeholder="Name" name='user_name'/><br/>
+      <br/>
+      <textarea name='review' placeholder="Review" rows="4" cols="50"></textarea><br/>
+      <input type='submit' class='button' name='submit' value="Submit"/>
+    </form>
+</div>
