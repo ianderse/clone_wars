@@ -48,7 +48,7 @@ class NovoCoffeeApp < Sinatra::Base
   end
 
   get '/news-events/2' do
-    erb :news_events_page_two
+    erb :news_events_page_two, locals: {contents: ContentStore.new.all}
   end
 
   get '/:slug' do |slug|
