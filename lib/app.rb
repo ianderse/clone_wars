@@ -62,9 +62,6 @@ class NovoCoffeeApp < Sinatra::Base
   get '/:id/edit' do |id|
     content = ContentStore.new.find_content(id)
     erb :edit, locals: {content: content, contents: ContentStore.new.all}
-    # content_store = ContentStore.new
-    # content_store.update(1, params[:content])
-    # redirect '/'
   end
 
   put '/:id/edit' do |id|
