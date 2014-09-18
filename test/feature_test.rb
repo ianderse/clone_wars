@@ -81,4 +81,13 @@ class UserTest < FeatureTest
     click_button('Send')
     assert page.has_css?('#message')
   end
+
+  def test_it_can_post_user_reviews_on_review_page
+    visit '/reviews'
+    fill_in('user_name',    :with => 'Ian')
+    fill_in('review',       :with => 'The Aneyetsu was a great way to start my day.')
+    click_button('Submit')
+    assert page.has_content?("Aneyetsu")
+  end
+
 end
